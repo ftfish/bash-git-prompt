@@ -418,7 +418,7 @@ function checkUpstream() {
   then
     if [[ -n $(git remote show) ]]; then
       (
-        async_run "git fetch --quiet"
+        async_run "setsid -w git fetch --quiet"
         disown -h
       )
     fi
